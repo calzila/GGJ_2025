@@ -12,15 +12,13 @@ size = Vector2(380, 43.5)
 size = Vector2(250, 7)
 
 [node name="Node2D" type="RigidBody2D"]
+mass = 2.0
+linear_damp = 4.0
+angular_damp = 20.0
 
 [node name="Example5" type="CollisionShape2D" parent="."]
 position = Vector2(-11, -479)
 rotation = 1.52769
-shape = SubResource("RectangleShape2D_33m84")
-
-[node name="Example5" type="CollisionShape2D" parent="Example5"]
-position = Vector2(77.648, -175.818)
-rotation = 1.24895
 shape = SubResource("RectangleShape2D_33m84")
 
 [node name="Example4" type="CollisionShape2D" parent="."]
@@ -50,8 +48,7 @@ shape = SubResource("RectangleShape2D_33m84")
 position = Vector2(-237, -161)
 shape = SubResource("RectangleShape2D_33m84")
 
-[node name="Example3" type="CollisionShape2D" parent="."]
-position = Vector2(176.508, -90.4319)
-rotation = 0.572669
-scale = Vector2(1, 1)
+[node name="Example6" type="CollisionShape2D" parent="."]
+position = Vector2(168, -409)
+rotation = 2.77664
 shape = SubResource("RectangleShape2D_33m84")
