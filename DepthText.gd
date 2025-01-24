@@ -10,11 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	#depthValue = str(global_position.y)
-	
+	#Display the depth on the Text Component
 	depthValue = global_position.y
 	depthValue = str(int(depthValue))
 	text = depthValue
-	
-	
-	pass
