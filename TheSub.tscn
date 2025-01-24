@@ -52,3 +52,12 @@ shape = SubResource("RectangleShape2D_33m84")
 position = Vector2(168, -409)
 rotation = 2.77664
 shape = SubResource("RectangleShape2D_33m84")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 262.0
+offset_top = -209.0
+offset_right = 630.0
+offset_bottom = -77.0
+theme_override_font_sizes/normal_font_size = 60
+text = "Example"
+scroll_active = false
