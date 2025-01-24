@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://4n0f6f2giqxp"]
+[gd_scene load_steps=3 format=3 uid="uid://4n0f6f2giqxp"]
 
 [ext_resource type="PackedScene" uid="uid://cmxn8qk06my2q" path="res://TheSub.tscn" id="1_q3hvh"]
+[ext_resource type="PackedScene" uid="uid://drfnwotp86vlp" path="res://Character.tscn" id="2_rullj"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="The Sub" parent="." instance=ExtResource("1_q3hvh")]
 position = Vector2(10, 0)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_rullj")]
+position = Vector2(-57, -110)
