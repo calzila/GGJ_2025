@@ -11,6 +11,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	#Display the depth on the Text Component
-	depthValue = global_position.y * 0.1
+	depthValue = global_position.y * 0.01
 	depthValue = str(int(depthValue), " Meters")
 	text = depthValue
