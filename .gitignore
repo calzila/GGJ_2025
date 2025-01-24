@@ -13,3 +13,5 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+GGJ_2025.exe
+GGJ_2025.console.exe
