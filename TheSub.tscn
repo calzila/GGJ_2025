@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmxn8qk06my2q"]
+[gd_scene load_steps=7 format=3 uid="uid://cmxn8qk06my2q"]
 
+[ext_resource type="Script" path="res://the_sub.gd" id="1_552i2"]
 [ext_resource type="Texture2D" uid="uid://te1er00kgs2n" path="res://Pod_1.png" id="2_5i7cj"]
 [ext_resource type="Script" path="res://DepthText.gd" id="2_yyie1"]
 
@@ -16,6 +17,7 @@ size = Vector2(250, 7)
 mass = 2.0
 linear_damp = 4.0
 angular_damp = 20.0
+script = ExtResource("1_552i2")
 
 [node name="Example5" type="CollisionShape2D" parent="."]
 position = Vector2(-11, -479)
