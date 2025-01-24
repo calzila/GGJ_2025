@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmxn8qk06my2q"]
+[gd_scene load_steps=8 format=3 uid="uid://cmxn8qk06my2q"]
 
 [ext_resource type="Script" path="res://the_sub.gd" id="1_552i2"]
 [ext_resource type="Texture2D" uid="uid://te1er00kgs2n" path="res://Pod_1.png" id="2_5i7cj"]
@@ -12,6 +12,9 @@ size = Vector2(380, 43.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gxej"]
 size = Vector2(250, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d02f1"]
+size = Vector2(88, 56.5)
 
 [node name="Node2D" type="RigidBody2D"]
 mass = 2.0
@@ -66,3 +69,10 @@ theme_override_font_sizes/normal_font_size = 60
 text = "Example"
 scroll_active = false
 script = ExtResource("2_yyie1")
+
+[node name="Area2D_Button" type="Area2D" parent="."]
+position = Vector2(20.25, -444.25)
+
+[node name="Button_Surface" type="CollisionShape2D" parent="Area2D_Button"]
+position = Vector2(-11.25, 2)
+shape = SubResource("RectangleShape2D_d02f1")
