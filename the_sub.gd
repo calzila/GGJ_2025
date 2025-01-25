@@ -7,12 +7,18 @@ const gravity_surfacing = -4
 var surfacingIntiated = false
 var player
 
+var newFish
+
 var oxygen = 1.0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var button_surfacing = $Area2D_Button
+	
+	# get the fish ready for when we need it
+	newFish = load("res://Fish.tscn")
+	newFish = preload("res://Fish.tscn")
 	
 	# Start the timer to spawn a fish
 	_spawn_a_fish()
@@ -60,7 +66,9 @@ func _surfaceSub():
 
 
 func _spawn_a_fish():
-	print("Spawn a fish!")
+	var fishInstance = newFish.instantiate() 
+	add_child(fishInstance)
+	fishInstance.position = Vector2(1,0) 
 	$TimerFishSpawn.start(5)
 	pass
 
