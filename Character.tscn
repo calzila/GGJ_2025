@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://drfnwotp86vlp"]
+[gd_scene load_steps=6 format=3 uid="uid://drfnwotp86vlp"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_4636m"]
 [ext_resource type="Texture2D" uid="uid://b1m8c84fjpng8" path="res://Godot_Trans.png" id="2_un2gu"]
+[ext_resource type="Texture2D" uid="uid://bt5vwvbqq5c25" path="res://Godot_Body.png" id="3_dua17"]
+[ext_resource type="Texture2D" uid="uid://5wn2wow38gd0" path="res://Godot_Hand.png" id="4_gkys5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52wfu"]
 size = Vector2(128, 128)
@@ -12,10 +14,26 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_4636m")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(2.86102e-06, -65.5)
-scale = Vector2(1.27083, 1.28125)
+[node name="Body" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, -32.835)
+scale = Vector2(0.821289, 0.834808)
+texture = ExtResource("3_dua17")
+
+[node name="Head" type="Sprite2D" parent="Body"]
+position = Vector2(0, -58.8938)
+scale = Vector2(1.10345, 1.09448)
 texture = ExtResource("2_un2gu")
+
+[node name="Hand_L" type="Sprite2D" parent="Body"]
+position = Vector2(-33.33, -4.602)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("4_gkys5")
+
+[node name="Hand_R" type="Sprite2D" parent="Body"]
+position = Vector2(33.33, -4.6)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("4_gkys5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -66)
