@@ -31,7 +31,6 @@ func _physics_process(delta: float) -> void:
 	var velocity = linear_velocity
 	velocity = Vector2(velocity.x, 0)
 	velocity = velocity.length()
-	print(velocity * 0.02)
 	
 	var bobBase = sin(Time.get_ticks_msec() / 1000.0 * (velocity * 0.015))
 	$Body.position = (Vector2(0,-32.8) + (Vector2(0,bobBase * 5)))

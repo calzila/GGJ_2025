@@ -17,12 +17,16 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	
+func _process(delta: float) -> void:	
 	# Handle tracking the players inputs
 	if playerIsHolding:
 		inputValue = Input.get_axis("move_left", "move_right")
 		$PivotPoint.rotation = $PivotPoint.rotation + (inputValue * 0.5 - $PivotPoint.rotation) * (delta * 10)
+		
+		# handle Space input
+		if Input.is_action_just_pressed("ui_accept"):
+			
+			pass
 		
 		if thrustsShip:
 			parentGrabber.theSub.apply_central_force(Vector2(inputValue,0) * 90000 * delta)

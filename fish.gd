@@ -24,6 +24,5 @@ func _apply_swim_force():
 	$SwimTimer.start(randf_range(1,4))
 
 func _on_swim_timer_timeout() -> void:
-	print("swimSwam")
 	_apply_swim_force()
 	pass # Replace with function body.
