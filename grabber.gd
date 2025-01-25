@@ -2,6 +2,7 @@ extends Area2D
 
 var player
 @export var theSub: Node
+@export var associatedLever: Node2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,3 +22,8 @@ func _process(delta: float) -> void:
 		$E.visible = true
 	else:
 		$E.visible = false
+		
+	
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		print("Plz jump")
