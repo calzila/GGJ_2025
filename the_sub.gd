@@ -29,7 +29,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
 	# Player hit the escape area!
 	if $Area2D_Button.overlaps_body(player):
 		print("Player Overlapped Escape!")
@@ -37,6 +36,8 @@ func _process(delta: float) -> void:
 	
 	
 	var velocity = linear_velocity.length()
+	# Tick away our oxygen a little every frame
+	oxygen -= 0.005 * delta
 	
 	
 	if global_position.y < 0 and surfacingIntiated:
@@ -44,12 +45,11 @@ func _process(delta: float) -> void:
 		gravity_scale = gravity_sinking
 	elif global_position.y > 0 and surfacingIntiated:
 		gravity_scale = gravity_surfacing
-		
-		
-		
 	
-	# Tick away our oxygen a little every frame
-	oxygen -= 0.005 * delta
+	
+	# Self-oriantate the sub
+	var correctionTorque = -rotation * 100000000 * delta
+	apply_torque(correctionTorque)
 	
 	
 func _startEndTimer():
