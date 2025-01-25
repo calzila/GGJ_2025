@@ -25,10 +25,7 @@ func _process(delta: float) -> void:
 	else:
 		playerInRange = false
 		$E.visible = false
-		
-		
 	
 	
 	if Input.is_action_just_pressed("Grab") and playerInRange:
-		associatedLever.inputValue = 1
-		print("Grab me Plz")
+		associatedLever.playerIsHolding = true

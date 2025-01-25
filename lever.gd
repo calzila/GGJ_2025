@@ -11,5 +11,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	$PivotPoint.rotation = inputValue * 10
-	pass
+	# Handle tracking the players inputs
+	if playerIsHolding:
+		inputValue = Input.get_axis("move_left", "move_right")
+	
+	$PivotPoint.rotation = inputValue * 0.5
