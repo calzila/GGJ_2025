@@ -12,8 +12,10 @@ var oxygen = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	var button_surfacing = $Area2D_Button
+	
+	# Start the timer to spawn a fish
+	_spawn_a_fish()
 	
 	# Start the timer to finish. 
 	_startEndTimer()
@@ -55,4 +57,15 @@ func _startEndTimer():
 func _surfaceSub():
 	surfacingIntiated = true
 	gravity_scale = gravity_surfacing
-	
+
+
+func _spawn_a_fish():
+	print("Spawn a fish!")
+	$TimerFishSpawn.start(5)
+	pass
+
+
+func _on_timer_fish_spawn_timeout() -> void:
+		print("Timer Finished?")
+		_spawn_a_fish()
+		

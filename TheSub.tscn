@@ -107,3 +107,7 @@ theSub = NodePath("..")
 [node name="Lever_Light" parent="." instance=ExtResource("6_3th0t")]
 position = Vector2(-125, -213)
 rotation = 0.00245824
+
+[node name="TimerFishSpawn" type="Timer" parent="."]
+
+[connection signal="timeout" from="TimerFishSpawn" to="." method="_on_timer_fish_spawn_timeout"]
