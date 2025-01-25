@@ -4,6 +4,8 @@ extends RigidBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -700.0
 
+var holdingLever = false
+
 func _ready() -> void:
 	pass
 
@@ -27,8 +29,13 @@ func _physics_process(delta: float) -> void:
 	var direction := Vector2.ZERO
 	direction.x = Input.get_axis("move_left", "move_right")
 	
-	apply_central_force(direction * 100000 * delta)
 	
+	# don't let the player move if we're holding onto a lever
+	if holdingLever:
+		# do some other shit if we're holding?
+		pass
+	else:
+		apply_central_force(direction * 100000 * delta)
 	
 	#if direction:
 	#	velocity.x = direction * SPEED

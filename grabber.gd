@@ -29,3 +29,4 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("Grab") and playerInRange:
 		associatedLever.playerIsHolding = true
+		theSub.player.holdingLever = true
