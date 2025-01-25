@@ -35,7 +35,6 @@ position = Vector2(0, -58.8938)
 scale = Vector2(1.10345, 1.09448)
 
 [node name="Head" type="Sprite2D" parent="Body/HeadAttachment"]
-scale = Vector2(1, 1)
 texture = ExtResource("2_un2gu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

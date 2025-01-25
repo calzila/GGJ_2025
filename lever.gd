@@ -13,6 +13,12 @@ func _process(delta: float) -> void:
 	
 	# Handle tracking the players inputs
 	if playerIsHolding:
+		
+		
 		inputValue = Input.get_axis("move_left", "move_right")
+		
+	#$PivotPoint.rotation = inputValue * 0.5
 	
-	$PivotPoint.rotation = inputValue * 0.5
+	
+	
+	$PivotPoint.rotation = $PivotPoint.rotation + (inputValue * 0.5 - $PivotPoint.rotation) * (delta * 10)
