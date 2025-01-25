@@ -7,6 +7,8 @@ const gravity_surfacing = -4
 var surfacingIntiated = false
 var player
 
+var oxygen = 1.0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,6 +37,14 @@ func _process(delta: float) -> void:
 	elif global_position.y > 0 and surfacingIntiated:
 		gravity_scale = gravity_surfacing
 		
+		
+		
+	
+	# Tick away our oxygen a little every frame
+	oxygen -= 0.005 * delta
+	print(oxygen)
+	
+	
 	
 func _startEndTimer():
 	# Start a timer, once it finishes, then we want to surface the sub. 

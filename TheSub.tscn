@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmxn8qk06my2q"]
+[gd_scene load_steps=10 format=3 uid="uid://cmxn8qk06my2q"]
 
 [ext_resource type="Script" path="res://the_sub.gd" id="1_552i2"]
 [ext_resource type="Texture2D" uid="uid://te1er00kgs2n" path="res://Pod_1.png" id="2_5i7cj"]
 [ext_resource type="Script" path="res://DepthText.gd" id="2_yyie1"]
 [ext_resource type="PackedScene" uid="uid://dafcx4ij3nrfj" path="res://grabber.tscn" id="4_0fm0l"]
+[ext_resource type="Script" path="res://remaining_oxygen.gd" id="5_ayy7u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33m84"]
 size = Vector2(19.9159, 316.904)
@@ -61,7 +62,7 @@ position = Vector2(168, -409)
 rotation = 2.77664
 shape = SubResource("RectangleShape2D_33m84")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Depth" type="RichTextLabel" parent="."]
 offset_left = 262.0
 offset_top = -209.0
 offset_right = 630.0
@@ -88,4 +89,16 @@ theSub = NodePath("..")
 
 [node name="Area2D_Button4" parent="." node_paths=PackedStringArray("theSub") instance=ExtResource("4_0fm0l")]
 position = Vector2(144, -22)
+theSub = NodePath("..")
+
+[node name="RemainingOxygen" type="RichTextLabel" parent="." node_paths=PackedStringArray("theSub")]
+offset_left = 269.0
+offset_top = -114.0
+offset_right = 674.0
+offset_bottom = 63.0
+theme_override_font_sizes/normal_font_size = 60
+text = "99% Oxygen Remaining
+"
+scroll_active = false
+script = ExtResource("5_ayy7u")
 theSub = NodePath("..")
