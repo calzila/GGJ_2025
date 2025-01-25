@@ -1,5 +1,8 @@
 extends Node2D
 
+@export var thrustsShip: bool = false
+@export var movesLight: bool = false
+
 var playerIsHolding = false
 var inputValue = 0.0
 
@@ -18,6 +21,7 @@ func _process(delta: float) -> void:
 	if playerIsHolding:
 		inputValue = Input.get_axis("move_left", "move_right")
 		$PivotPoint.rotation = $PivotPoint.rotation + (inputValue * 0.5 - $PivotPoint.rotation) * (delta * 10)
+		
 		
 		parentGrabber.theSub.apply_central_force(Vector2(inputValue,0) * 90000 * delta)
 		

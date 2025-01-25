@@ -132,9 +132,9 @@ rotation = 0.00491648
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, -223)
-rotation = -1.5708
+rotation = 4.86249
 scale = Vector2(5.53125, 5.875)
 texture = ExtResource("8_w06ea")
-offset = Vector2(0, 256)
+offset = Vector2(0, 312)
 
 [connection signal="timeout" from="TimerFishSpawn" to="." method="_on_timer_fish_spawn_timeout"]
