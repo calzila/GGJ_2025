@@ -32,7 +32,18 @@ func _process(delta: float) -> void:
 	
 	
 	if Input.is_action_just_pressed("Grab") and playerInRange:
-		associatedLever.playerIsHolding = true
-		theSub.player.holdingLever = true
+		# Player has tried grabbing!
+		if theSub.player.holdingLever:
+			# in this scenario, the player should let go. 
+			associatedLever.playerIsHolding = false
+			theSub.player.holdingLever = false
+			
+		else:
+			# Make the player grab the lever
+			associatedLever.playerIsHolding = true
+			theSub.player.holdingLever = true
+			
+			associatedLever.player = player
 		
-		associatedLever.player = player
+		
+		
