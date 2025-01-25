@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmxn8qk06my2q"]
+[gd_scene load_steps=12 format=3 uid="uid://cmxn8qk06my2q"]
 
 [ext_resource type="Script" path="res://the_sub.gd" id="1_552i2"]
 [ext_resource type="Texture2D" uid="uid://te1er00kgs2n" path="res://Pod_1.png" id="2_5i7cj"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dafcx4ij3nrfj" path="res://grabber.tscn" id="4_0fm0l"]
 [ext_resource type="Script" path="res://remaining_oxygen.gd" id="5_ayy7u"]
 [ext_resource type="PackedScene" uid="uid://fnjl6irw0r44" path="res://Lever.tscn" id="6_3th0t"]
+[ext_resource type="Texture2D" uid="uid://cbpymf5bvqtou" path="res://icon.svg" id="7_oj24b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33m84"]
 size = Vector2(19.9159, 316.904)
@@ -112,9 +113,14 @@ rotation = 0.00245824
 
 [node name="FishSpawner_Pivot" type="Node2D" parent="."]
 position = Vector2(0, -208)
-rotation = 6.28319
+rotation = -1.55334
 
 [node name="FishSpawner_Point" type="Node2D" parent="FishSpawner_Pivot"]
-position = Vector2(0, 500)
+position = Vector2(0, 2000)
+
+[node name="Sprite2D" type="Sprite2D" parent="FishSpawner_Pivot/FishSpawner_Point"]
+z_index = 6
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("7_oj24b")
 
 [connection signal="timeout" from="TimerFishSpawn" to="." method="_on_timer_fish_spawn_timeout"]
