@@ -26,9 +26,8 @@ func _process(delta: float) -> void:
 		_surfaceSub()
 	
 	
-	
-	
 	var velocity = linear_velocity.length()
+	
 	
 	if global_position.y < 0 and surfacingIntiated:
 		# This fires when the sub comes above the surface. 
