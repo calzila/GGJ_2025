@@ -26,7 +26,8 @@ func _physics_process(delta: float) -> void:
 	#	velocity += get_gravity() * delta
 	
 	# Bob the player
-	print(sin(Time.get_ticks_msec() / 1000.0 * 4))
+	var bobBase = sin(Time.get_ticks_msec() / 1000.0 * 15)
+	$Body.position = (Vector2(0,-32.8) + (Vector2(0,bobBase * 5)))
 	
 	
 	var headLookDirection = linear_velocity.normalized()
