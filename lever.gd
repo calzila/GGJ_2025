@@ -3,6 +3,8 @@ extends Node2D
 @export var thrustsShip: bool = false
 @export var movesLight: bool = false
 
+@export var lightRef: Node2D
+
 var playerIsHolding = false
 var inputValue = 0.0
 
@@ -25,6 +27,9 @@ func _process(delta: float) -> void:
 		if thrustsShip:
 			parentGrabber.theSub.apply_central_force(Vector2(inputValue,0) * 90000 * delta)
 			parentGrabber.theSub.apply_torque((inputValue) * 20000000 * delta)
+		
+		if movesLight:
+			lightRef.rotation += inputValue * 1 * delta
 		
 		if player != null:
 			# put the hand on the lever

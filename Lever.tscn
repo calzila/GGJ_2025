@@ -18,11 +18,13 @@ position = Vector2(12, -62)
 scale = Vector2(0.0859375, 0.632813)
 
 [node name="Lever2" type="Sprite2D" parent="PivotPoint"]
+z_index = 8
 position = Vector2(2, -37)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("3_38ejf")
 
 [node name="LeverPad" type="Sprite2D" parent="."]
+z_index = 9
 position = Vector2(-1, -6)
 scale = Vector2(0.181216, 0.181216)
 texture = ExtResource("4_e705b")

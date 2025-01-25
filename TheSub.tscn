@@ -107,10 +107,11 @@ scroll_active = false
 script = ExtResource("5_ayy7u")
 theSub = NodePath("..")
 
-[node name="Lever_Light" parent="." instance=ExtResource("6_3th0t")]
+[node name="Lever_Light" parent="." node_paths=PackedStringArray("lightRef") instance=ExtResource("6_3th0t")]
 position = Vector2(-125, -213)
 rotation = 0.00245824
 movesLight = true
+lightRef = NodePath("../PointLight2D")
 
 [node name="TimerFishSpawn" type="Timer" parent="."]
 
