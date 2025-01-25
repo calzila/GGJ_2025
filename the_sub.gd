@@ -21,7 +21,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	# Player hit the escape area!
-	if $Area2D_Button.has_overlapping_bodies():
+	if $Area2D_Button.overlaps_body(player):
 		print("Player Overlapped Escape!")
 		_surfaceSub()
 	
@@ -29,7 +29,6 @@ func _process(delta: float) -> void:
 	
 	
 	var velocity = linear_velocity.length()
-	print(velocity * 0.002)
 	
 	if global_position.y < 0 and surfacingIntiated:
 		# This fires when the sub comes above the surface. 
