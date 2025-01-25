@@ -21,7 +21,7 @@ func _apply_swim_force():
 	apply_central_force(forceDirection * swimForce)
 	apply_torque(randf_range(-1,1) * rotationForce)
 	
-	$SwimTimer.start(1)
+	$SwimTimer.start(randf_range(1,4))
 
 func _on_swim_timer_timeout() -> void:
 	print("swimSwam")
