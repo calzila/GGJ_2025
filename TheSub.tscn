@@ -110,6 +110,7 @@ theSub = NodePath("..")
 [node name="Lever_Light" parent="." instance=ExtResource("6_3th0t")]
 position = Vector2(-125, -213)
 rotation = 0.00245824
+movesLight = true
 
 [node name="TimerFishSpawn" type="Timer" parent="."]
 
@@ -129,6 +130,7 @@ texture = ExtResource("7_oj24b")
 [node name="Lever_Steering" parent="." instance=ExtResource("6_3th0t")]
 position = Vector2(-132, -2)
 rotation = 0.00491648
+thrustsShip = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, -223)

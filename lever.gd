@@ -22,12 +22,12 @@ func _process(delta: float) -> void:
 		inputValue = Input.get_axis("move_left", "move_right")
 		$PivotPoint.rotation = $PivotPoint.rotation + (inputValue * 0.5 - $PivotPoint.rotation) * (delta * 10)
 		
-		
-		parentGrabber.theSub.apply_central_force(Vector2(inputValue,0) * 90000 * delta)
-		
-		parentGrabber.theSub.apply_torque((inputValue) * 20000000 * delta)
+		if thrustsShip:
+			parentGrabber.theSub.apply_central_force(Vector2(inputValue,0) * 90000 * delta)
+			parentGrabber.theSub.apply_torque((inputValue) * 20000000 * delta)
 		
 		if player != null:
+			# put the hand on the lever
 			player.hand_L.global_position = $PivotPoint/HandSpot_L.global_position
 			player.hand_R.global_position = $PivotPoint/HandSpot_R.global_position
 			
