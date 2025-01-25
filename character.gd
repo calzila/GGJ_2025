@@ -12,6 +12,10 @@ func _physics_process(delta: float) -> void:
 	#if not is_on_floor():
 	#	velocity += get_gravity() * delta
 	
+	var headLookDirection = linear_velocity.normalized()
+	headLookDirection = Vector2(headLookDirection.x * 0.35, headLookDirection.y * 0.08)
+	$Body/HeadAttachment/Head.global_position = $Body/HeadAttachment.global_position + (headLookDirection * 50)
+	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and (get_contact_count() > 0):
 		print("Plz jump")
