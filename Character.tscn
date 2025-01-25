@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://drfnwotp86vlp"]
 
-[ext_resource type="Texture2D" uid="uid://cbpymf5bvqtou" path="res://icon.svg" id="1_0qk48"]
 [ext_resource type="Script" path="res://character.gd" id="1_4636m"]
+[ext_resource type="Texture2D" uid="uid://b1m8c84fjpng8" path="res://Godot_Trans.png" id="2_un2gu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52wfu"]
 size = Vector2(128, 128)
@@ -13,8 +13,9 @@ max_contacts_reported = 1
 script = ExtResource("1_4636m")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(0, -66)
-texture = ExtResource("1_0qk48")
+position = Vector2(2.86102e-06, -65.5)
+scale = Vector2(1.27083, 1.28125)
+texture = ExtResource("2_un2gu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -66)
