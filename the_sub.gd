@@ -73,7 +73,7 @@ func _spawn_a_fish():
 	var fishInstance = newFish.instantiate() 
 	add_child(fishInstance)
 	fishInstance.global_position = $FishSpawner_Pivot/FishSpawner_Point.global_position
-	$TimerFishSpawn.start(0.25)
+	$TimerFishSpawn.start(randf_range(0.5,4))
 	pass
 
 
