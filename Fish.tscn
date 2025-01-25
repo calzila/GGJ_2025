@@ -18,3 +18,5 @@ texture = ExtResource("2_p5lxc")
 shape = SubResource("CircleShape2D_ywspf")
 
 [node name="SwimTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="SwimTimer" to="." method="_on_swim_timer_timeout"]
