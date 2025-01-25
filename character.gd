@@ -49,9 +49,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		apply_central_force(direction * 100000 * delta)
 		
-		# Self-oriantate the sub
-		var correctionTorque = -rotation * 10000000 * delta
-		apply_torque(correctionTorque)
+	# Self-oriantate the sub
+	var correctionTorque = -rotation * 10000000 * delta
+	apply_torque(correctionTorque)
 	
 	# orient head to always face up
 	$Body/HeadAttachment/Head.global_rotation = $Body/HeadAttachment/Head.global_rotation + (0 - $Body/HeadAttachment/Head.global_rotation) * (delta * 7)
