@@ -10,6 +10,7 @@ var player
 var newFish
 
 var oxygen = 1.0
+var velocity
 
 
 # Called when the node enters the scene tree for the first time.
@@ -35,7 +36,7 @@ func _process(delta: float) -> void:
 		_surfaceSub()
 	
 	
-	var velocity = linear_velocity.length()
+	velocity = linear_velocity.length()
 	# Tick away our oxygen a little every frame
 	oxygen -= 0.005 * delta
 	
