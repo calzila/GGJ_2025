@@ -13,8 +13,8 @@ var hand_R_RestingPosition
 
 
 func _ready() -> void:
-	hand_L = $Body/Hand_L
-	hand_R = $Body/Hand_R
+	hand_L = $Hand_L
+	hand_R = $Hand_R
 	
 	hand_L_RestingPosition = hand_L.position
 	hand_R_RestingPosition = hand_R.position
@@ -25,10 +25,13 @@ func _physics_process(delta: float) -> void:
 	#if not is_on_floor():
 	#	velocity += get_gravity() * delta
 	
+	# Bob the player
+	print(sin(Time.get_ticks_msec() / 1000.0 * 4))
+	
 	
 	var headLookDirection = linear_velocity.normalized()
 	headLookDirection = Vector2(headLookDirection.x * 0.35, headLookDirection.y * 0.08)
-	$Body/HeadAttachment/Head.global_position = $Body/HeadAttachment.global_position + (headLookDirection * 50)
+	$HeadAttachment/Head.global_position = $HeadAttachment.global_position + (headLookDirection * 50)
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and (get_contact_count() > 0):
@@ -54,7 +57,7 @@ func _physics_process(delta: float) -> void:
 	apply_torque(correctionTorque)
 	
 	# orient head to always face up
-	$Body/HeadAttachment/Head.global_rotation = $Body/HeadAttachment/Head.global_rotation + (0 - $Body/HeadAttachment/Head.global_rotation) * (delta * 7)
+	$HeadAttachment/Head.global_rotation = $HeadAttachment/Head.global_rotation + (0 - $HeadAttachment/Head.global_rotation) * (delta * 7)
 
 	rotation
 	
