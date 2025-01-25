@@ -43,8 +43,11 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and (get_contact_count() > 0):
 		print("Plz jump")
-		apply_central_force(Vector2(0,-1) * 3000000 * delta)
-		
+		if holdingLever:
+			pass
+		else:
+			apply_central_force(Vector2(0,-1) * 3000000 * delta)
+	
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
