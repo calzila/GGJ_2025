@@ -80,9 +80,10 @@ position = Vector2(20.25, -444.25)
 position = Vector2(-14.25, 10.25)
 shape = SubResource("RectangleShape2D_d02f1")
 
-[node name="Area2D_Button2" parent="." node_paths=PackedStringArray("theSub") instance=ExtResource("4_0fm0l")]
+[node name="Area2D_Button2" parent="." node_paths=PackedStringArray("theSub", "associatedLever") instance=ExtResource("4_0fm0l")]
 position = Vector2(-125, -222)
 theSub = NodePath("..")
+associatedLever = NodePath("../Lever_Light")
 
 [node name="Area2D_Button3" parent="." node_paths=PackedStringArray("theSub") instance=ExtResource("4_0fm0l")]
 position = Vector2(-132, -26)
@@ -104,5 +105,6 @@ scroll_active = false
 script = ExtResource("5_ayy7u")
 theSub = NodePath("..")
 
-[node name="Node2D" parent="." instance=ExtResource("6_3th0t")]
+[node name="Lever_Light" parent="." instance=ExtResource("6_3th0t")]
 position = Vector2(-125, -213)
+rotation = 0.00245824

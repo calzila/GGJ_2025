@@ -30,4 +30,5 @@ func _process(delta: float) -> void:
 	
 	
 	if Input.is_action_just_pressed("Grab") and playerInRange:
+		associatedLever.inputValue = 1
 		print("Grab me Plz")
