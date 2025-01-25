@@ -3,6 +3,7 @@ extends Area2D
 var player
 @export var theSub: Node
 @export var associatedLever: Node2D
+var playerInRange = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,11 +20,14 @@ func _process(delta: float) -> void:
 	
 	
 	if overlaps_body(player):
+		playerInRange = true
 		$E.visible = true
 	else:
+		playerInRange = false
 		$E.visible = false
+		
 		
 	
 	
-	if Input.is_action_just_pressed("ui_accept"):
-		print("Plz jump")
+	if Input.is_action_just_pressed("Grab") and playerInRange:
+		print("Grab me Plz")

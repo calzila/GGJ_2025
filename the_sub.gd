@@ -42,8 +42,6 @@ func _process(delta: float) -> void:
 	
 	# Tick away our oxygen a little every frame
 	oxygen -= 0.005 * delta
-	print(oxygen)
-	
 	
 	
 func _startEndTimer():
