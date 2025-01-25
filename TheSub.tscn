@@ -110,4 +110,11 @@ rotation = 0.00245824
 
 [node name="TimerFishSpawn" type="Timer" parent="."]
 
+[node name="FishSpawner_Pivot" type="Node2D" parent="."]
+position = Vector2(0, -208)
+rotation = 6.28319
+
+[node name="FishSpawner_Point" type="Node2D" parent="FishSpawner_Pivot"]
+position = Vector2(0, 500)
+
 [connection signal="timeout" from="TimerFishSpawn" to="." method="_on_timer_fish_spawn_timeout"]

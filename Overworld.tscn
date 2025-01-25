@@ -77,4 +77,3 @@ offset = Vector2(0, -360)
 
 [node name="Node2D" parent="." instance=ExtResource("9_45ve4")]
 position = Vector2(506, 330)
-gravity_scale = 0.0

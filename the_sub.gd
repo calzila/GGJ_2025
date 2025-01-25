@@ -66,10 +66,14 @@ func _surfaceSub():
 
 
 func _spawn_a_fish():
+	# randomize the spawn position of the fish.
+	$FishSpawner_Pivot.rotation = randf_range(0,360)
+	
+	# Actually spawn in the fish. 
 	var fishInstance = newFish.instantiate() 
 	add_child(fishInstance)
-	fishInstance.position = Vector2(1,0) 
-	$TimerFishSpawn.start(5)
+	fishInstance.global_position = $FishSpawner_Pivot/FishSpawner_Point.global_position
+	$TimerFishSpawn.start(2)
 	pass
 
 
