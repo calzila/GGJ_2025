@@ -78,11 +78,14 @@ position = Vector2(20.25, -444.25)
 position = Vector2(-14.25, 10.25)
 shape = SubResource("RectangleShape2D_d02f1")
 
-[node name="Area2D_Button2" parent="." instance=ExtResource("4_0fm0l")]
+[node name="Area2D_Button2" parent="." node_paths=PackedStringArray("theSub") instance=ExtResource("4_0fm0l")]
 position = Vector2(-125, -222)
+theSub = NodePath("..")
 
-[node name="Area2D_Button3" parent="." instance=ExtResource("4_0fm0l")]
+[node name="Area2D_Button3" parent="." node_paths=PackedStringArray("theSub") instance=ExtResource("4_0fm0l")]
 position = Vector2(-132, -26)
+theSub = NodePath("..")
 
-[node name="Area2D_Button3" parent="Area2D_Button3" instance=ExtResource("4_0fm0l")]
-position = Vector2(276, 4)
+[node name="Area2D_Button4" parent="." node_paths=PackedStringArray("theSub") instance=ExtResource("4_0fm0l")]
+position = Vector2(144, -22)
+theSub = NodePath("..")
