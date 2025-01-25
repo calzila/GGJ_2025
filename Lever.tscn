@@ -1,17 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://fnjl6irw0r44"]
+[gd_scene load_steps=4 format=3 uid="uid://fnjl6irw0r44"]
 
 [ext_resource type="Script" path="res://lever.gd" id="1_vutg4"]
-[ext_resource type="Texture2D" uid="uid://cbpymf5bvqtou" path="res://icon.svg" id="1_w6ka6"]
+[ext_resource type="Texture2D" uid="uid://cjajpcxxycey7" path="res://Lever_pole.png" id="3_38ejf"]
+[ext_resource type="Texture2D" uid="uid://hjljfhikhnt1" path="res://Lever_Pad.png" id="4_e705b"]
 
 [node name="Lever_Root" type="Node2D"]
 script = ExtResource("1_vutg4")
 
 [node name="PivotPoint" type="Node2D" parent="."]
-
-[node name="Lever" type="Sprite2D" parent="PivotPoint"]
-position = Vector2(0.5, -40.5)
-scale = Vector2(0.0859375, 0.632813)
-texture = ExtResource("1_w6ka6")
 
 [node name="HandSpot_L" type="Node2D" parent="PivotPoint"]
 position = Vector2(-12, -70)
@@ -20,3 +16,13 @@ scale = Vector2(0.0859375, 0.632813)
 [node name="HandSpot_R" type="Node2D" parent="PivotPoint"]
 position = Vector2(12, -62)
 scale = Vector2(0.0859375, 0.632813)
+
+[node name="Lever2" type="Sprite2D" parent="PivotPoint"]
+position = Vector2(2, -37)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("3_38ejf")
+
+[node name="LeverPad" type="Sprite2D" parent="."]
+position = Vector2(-1, -6)
+scale = Vector2(0.181216, 0.181216)
+texture = ExtResource("4_e705b")
