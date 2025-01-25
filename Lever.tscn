@@ -12,3 +12,11 @@ script = ExtResource("1_vutg4")
 position = Vector2(0.5, -40.5)
 scale = Vector2(0.0859375, 0.632813)
 texture = ExtResource("1_w6ka6")
+
+[node name="HandSpot_L" type="Node2D" parent="PivotPoint"]
+position = Vector2(-12, -70)
+scale = Vector2(0.0859375, 0.632813)
+
+[node name="HandSpot_R" type="Node2D" parent="PivotPoint"]
+position = Vector2(12, -70)
+scale = Vector2(0.0859375, 0.632813)
