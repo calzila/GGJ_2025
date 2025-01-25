@@ -16,9 +16,10 @@ func _process(delta: float) -> void:
 
 func _apply_swim_force():
 	var forceDirection = Vector2.UP.rotated(rotation)
-	#linear_velocity += movement.y * Vector2.UP.rotated(ship.rotation) * max_linear_velocity * delta
-	apply_central_force(forceDirection * 15000)
-	apply_torque(randf_range(-1,1) * 200000)
+	var swimForce = randf_range(0,15000)
+	var rotationForce = randf_range(100000,200000)
+	apply_central_force(forceDirection * swimForce)
+	apply_torque(randf_range(-1,1) * rotationForce)
 	
 	$SwimTimer.start(1)
 
