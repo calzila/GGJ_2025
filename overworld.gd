@@ -5,6 +5,7 @@ extends Node2D
 func _ready() -> void:
 	# Set the refs between Nodes, from here, the common parent. 
 	$"The Sub".player = $Player
+	$Player.theSub = $"The Sub"
 	
 	pass # Replace with function body.
 

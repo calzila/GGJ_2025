@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -700.0
 
 var holdingLever = false
 
+@export var theSub: Node2D
+
 var hand_L
 var hand_R
 var hand_L_RestingPosition
@@ -27,10 +29,12 @@ func _physics_process(delta: float) -> void:
 	
 	# Bob the player
 	var velocity = linear_velocity
-	var bobBase = sin(Time.get_ticks_msec() / 1000.0 * 15)
-	$Body.position = (Vector2(0,-32.8) + (Vector2(0,bobBase * 5)))
+	velocity = Vector2(velocity.x, 0)
+	velocity = velocity.length()
+	print(velocity * 0.02)
 	
-	print(velocity.length())
+	var bobBase = sin(Time.get_ticks_msec() / 1000.0 * (velocity * 0.015))
+	$Body.position = (Vector2(0,-32.8) + (Vector2(0,bobBase * 5)))
 	
 	var headLookDirection = linear_velocity.normalized()
 	headLookDirection = Vector2(headLookDirection.x * 0.35, headLookDirection.y * 0.08)
