@@ -10,7 +10,7 @@ var surfacingIntiated = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	var button_surfacing = $Area2D_Button	
+	var button_surfacing = $Area2D_Button
 	
 	# Start the timer to finish. 
 	_startEndTimer()
