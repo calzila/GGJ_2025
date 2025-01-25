@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://4n0f6f2giqxp"]
+[gd_scene load_steps=10 format=3 uid="uid://4n0f6f2giqxp"]
 
 [ext_resource type="Script" path="res://overworld.gd" id="1_o4a4l"]
 [ext_resource type="PackedScene" uid="uid://cmxn8qk06my2q" path="res://TheSub.tscn" id="1_q3hvh"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://doa7t4ba5vxde" path="res://Parallex/parallax-02.png" id="6_uq5kq"]
 [ext_resource type="Texture2D" uid="uid://b5fla0oquc81w" path="res://Parallex/parallax-03.png" id="7_icu8u"]
 [ext_resource type="Texture2D" uid="uid://blnccghqrxuk4" path="res://Parallex/Dither_Underwater.png" id="7_sss20"]
+[ext_resource type="PackedScene" uid="uid://db4ecvxjd0bvg" path="res://Fish.tscn" id="9_45ve4"]
 
 [node name="WorldRoot" type="Node2D"]
 script = ExtResource("1_o4a4l")
@@ -73,3 +74,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("7_icu8u")
 centered = false
 offset = Vector2(0, -360)
+
+[node name="Node2D" parent="." instance=ExtResource("9_45ve4")]
+position = Vector2(506, 330)
+gravity_scale = 0.0
