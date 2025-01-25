@@ -8,11 +8,17 @@ var holdingLever = false
 
 var hand_L
 var hand_R
+var hand_L_RestingPosition
+var hand_R_RestingPosition
 
 
 func _ready() -> void:
 	hand_L = $Body/Hand_L
 	hand_R = $Body/Hand_R
+	
+	hand_L_RestingPosition = hand_L.position
+	hand_R_RestingPosition = hand_R.position
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

@@ -38,6 +38,9 @@ func _process(delta: float) -> void:
 			associatedLever.playerIsHolding = false
 			theSub.player.holdingLever = false
 			
+			player.hand_L.position = player.hand_L_RestingPosition
+			player.hand_R.position = player.hand_R_RestingPosition
+			
 		else:
 			# Make the player grab the lever
 			associatedLever.playerIsHolding = true
