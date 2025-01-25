@@ -18,5 +18,5 @@ position = Vector2(-12, -70)
 scale = Vector2(0.0859375, 0.632813)
 
 [node name="HandSpot_R" type="Node2D" parent="PivotPoint"]
-position = Vector2(12, -70)
+position = Vector2(12, -62)
 scale = Vector2(0.0859375, 0.632813)

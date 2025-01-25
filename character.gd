@@ -6,13 +6,19 @@ const JUMP_VELOCITY = -700.0
 
 var holdingLever = false
 
+var hand_L
+var hand_R
+
+
 func _ready() -> void:
-	pass
+	hand_L = $Body/Hand_L
+	hand_R = $Body/Hand_R
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	#if not is_on_floor():
 	#	velocity += get_gravity() * delta
+	
 	
 	var headLookDirection = linear_velocity.normalized()
 	headLookDirection = Vector2(headLookDirection.x * 0.35, headLookDirection.y * 0.08)

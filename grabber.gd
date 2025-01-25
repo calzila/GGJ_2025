@@ -5,6 +5,8 @@ var player
 @export var associatedLever: Node2D
 var playerInRange = false
 
+# Store the hand components like this. I'm not totally sure how to grab them someplace else otherwise. 
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,3 +32,5 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Grab") and playerInRange:
 		associatedLever.playerIsHolding = true
 		theSub.player.holdingLever = true
+		
+		associatedLever.player = player
