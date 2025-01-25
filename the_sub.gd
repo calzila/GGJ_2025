@@ -5,6 +5,7 @@ const gravity_sinking = 1
 const gravity_surfacing = -4
 
 var surfacingIntiated = false
+var player
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,7 +24,6 @@ func _process(delta: float) -> void:
 	if $Area2D_Button.has_overlapping_bodies():
 		print("Player Overlapped Escape!")
 		_surfaceSub()
-		
 	
 	
 	
