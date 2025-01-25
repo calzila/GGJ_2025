@@ -74,5 +74,5 @@ script = ExtResource("2_yyie1")
 position = Vector2(20.25, -444.25)
 
 [node name="Button_Surface" type="CollisionShape2D" parent="Area2D_Button"]
-position = Vector2(-11.25, 2)
+position = Vector2(-14.25, 10.25)
 shape = SubResource("RectangleShape2D_d02f1")

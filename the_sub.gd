@@ -19,6 +19,15 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	# Player hit the escape area!
+	if $Area2D_Button.has_overlapping_bodies():
+		print("Player Overlapped Escape!")
+		_surfaceSub()
+		
+	
+	
+	
+	
 	var velocity = linear_velocity.length()
 	print(velocity * 0.002)
 	
@@ -31,10 +40,13 @@ func _process(delta: float) -> void:
 	
 func _startEndTimer():
 	# Start a timer, once it finishes, then we want to surface the sub. 
-	await get_tree().create_timer(4).timeout
+	await get_tree().create_timer(60).timeout
 	# Timer has finished now!!!
 	print("Lift the sub now")
 	# Reverse gravity!
+	_surfaceSub()
+	
+func _surfaceSub():
 	surfacingIntiated = true
 	gravity_scale = gravity_surfacing
 	
