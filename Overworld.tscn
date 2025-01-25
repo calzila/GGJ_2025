@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://4n0f6f2giqxp"]
+[gd_scene load_steps=8 format=3 uid="uid://4n0f6f2giqxp"]
 
 [ext_resource type="PackedScene" uid="uid://cmxn8qk06my2q" path="res://TheSub.tscn" id="1_q3hvh"]
 [ext_resource type="PackedScene" uid="uid://drfnwotp86vlp" path="res://Character.tscn" id="2_rullj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cjmvhf8me685y" path="res://Parallex/parallax-01.png" id="5_ie6se"]
 [ext_resource type="Texture2D" uid="uid://doa7t4ba5vxde" path="res://Parallex/parallax-02.png" id="6_uq5kq"]
 [ext_resource type="Texture2D" uid="uid://b5fla0oquc81w" path="res://Parallex/parallax-03.png" id="7_icu8u"]
+[ext_resource type="Texture2D" uid="uid://blnccghqrxuk4" path="res://Parallex/Dither_Underwater.png" id="7_sss20"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -14,6 +15,19 @@ position = Vector2(10, 0)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_rullj")]
 position = Vector2(-87, -250)
+
+[node name="Underwater" type="Sprite2D" parent="."]
+z_index = -7
+z_as_relative = false
+texture_filter = 1
+texture_repeat = 3
+position = Vector2(-30, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("7_sss20")
+centered = false
+offset = Vector2(-3500, 0)
+region_enabled = true
+region_rect = Rect2(100, 100, 7000, 20000)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_limit_begin = Vector2(1400, 0)
