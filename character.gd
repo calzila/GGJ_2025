@@ -4,6 +4,8 @@ extends RigidBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -700.0
 
+var alive = true
+
 var holdingLever = false
 
 @export var theSub: Node2D
@@ -69,6 +71,20 @@ func _physics_process(delta: float) -> void:
 	$HeadAttachment/Head.global_rotation = $HeadAttachment/Head.global_rotation + (0 - $HeadAttachment/Head.global_rotation) * (delta * 7)
 
 	rotation
+	
+	
+func _kill():
+	if alive:
+		# kill the player
+		alive = false
+		print("kill player")
+		
+		pass
+	else:
+		# don't need to do anything if they're already dead. 
+		pass
+	
+	
 	
 	#if direction:
 	#	velocity.x = direction * SPEED

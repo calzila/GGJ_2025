@@ -15,7 +15,6 @@ var velocity
 var fishCaptured = 0
 var weightBase = 10
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var button_surfacing = $Area2D_Button
@@ -38,7 +37,6 @@ func _process(delta: float) -> void:
 	
 	# We get hevier the more fish we have. 
 	mass = 10 + (fishCaptured * 0.1)
-	print(mass)
 	
 	# Player hit the escape area!
 	if $Area2D_Button.overlaps_body(player):
@@ -53,8 +51,9 @@ func _process(delta: float) -> void:
 	if (global_position.y < 50):
 		# don't deplete the oxygen if we're at the surface. 
 		pass
-	elif oxygen < 0:
-		print("OUT OF OXYGEN")
+	elif oxygen < 0.95:
+		player._kill()
+		
 	else:
 		oxygen -= 0.005 * delta
 	
@@ -104,5 +103,4 @@ func _spawn_a_fish():
 
 
 func _on_timer_fish_spawn_timeout() -> void:
-		print("Timer Finished?")
 		_spawn_a_fish()
