@@ -12,7 +12,7 @@ var newFish
 var oxygen = 1.0
 var velocity
 
-var weightFromFish = 0
+var fishCaptured = 0
 var weightBase = 10
 
 
@@ -35,7 +35,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	# We get hevier the more fish we have. 
-	mass = 10 + weightFromFish
+	mass = 10 + (fishCaptured * 0.1)
 	print(mass)
 	
 	# Player hit the escape area!
