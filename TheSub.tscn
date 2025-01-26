@@ -163,4 +163,13 @@ offset = Vector2(0, 64)
 [node name="ProjectileSpaw" type="Node2D" parent="PointLight2D/Sprite2D2"]
 position = Vector2(0, 150)
 
+[node name="FishCaptured" type="RichTextLabel" parent="."]
+offset_left = -304.0
+offset_top = -638.0
+offset_right = 463.0
+offset_bottom = -533.0
+theme_override_font_sizes/normal_font_size = 60
+text = "Fish Captured:"
+scroll_active = false
+
 [connection signal="timeout" from="TimerFishSpawn" to="." method="_on_timer_fish_spawn_timeout"]

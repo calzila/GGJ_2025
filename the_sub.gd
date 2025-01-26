@@ -34,6 +34,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	$FishCaptured.text = str("Fish Captured :", fishCaptured)
+	
 	# We get hevier the more fish we have. 
 	mass = 10 + (fishCaptured * 0.1)
 	print(mass)
