@@ -50,7 +50,7 @@ position = Vector2(-22.0689, 3.28342)
 scale = Vector2(1.10345, 1.09447)
 texture = ExtResource("5_22yvc")
 
-[node name="GodotEye_L2" type="Sprite2D" parent="HeadAttachment/Head"]
+[node name="GodotEye_R" type="Sprite2D" parent="HeadAttachment/Head"]
 texture_filter = 1
 position = Vector2(19.862, 3.28342)
 scale = Vector2(1.10345, 1.09447)

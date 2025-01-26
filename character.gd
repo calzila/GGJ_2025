@@ -83,6 +83,10 @@ func _kill():
 		alive = false
 		apply_torque(1000000)
 		apply_central_force(Vector2(1,0) * 1000)
+		
+		$HeadAttachment/Head/GodotEye_L.texture = load("res://Godot_Eye_Cross.png") 
+		$HeadAttachment/Head/GodotEye_R.texture = load("res://Godot_Eye_Cross.png")
+		
 		print("kill player")
 		
 		pass
