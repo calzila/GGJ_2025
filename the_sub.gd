@@ -2,7 +2,7 @@ extends RigidBody2D
 
 # Values for handling making the sub come up and down. 
 const gravity_sinking = 1
-const gravity_surfacing = -4
+const gravity_surfacing = 0
 
 var surfacingIntiated = false
 var player
@@ -13,6 +13,7 @@ var oxygen = 1.0
 var velocity
 
 var weightFromFish = 0
+var weightBase = 10
 
 
 # Called when the node enters the scene tree for the first time.
@@ -33,7 +34,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	print(weightFromFish)
+	# We get hevier the more fish we have. 
+	mass = 10 + weightFromFish
+	print(mass)
 	
 	# Player hit the escape area!
 	if $Area2D_Button.overlaps_body(player):
@@ -48,9 +51,12 @@ func _process(delta: float) -> void:
 	
 	if global_position.y < 0 and surfacingIntiated:
 		# This fires when the sub comes above the surface. 
-		gravity_scale = gravity_sinking
+		#gravity_scale = gravity_sinking
+		constant_force = Vector2(0,0)
+
 	elif global_position.y > 0 and surfacingIntiated:
-		gravity_scale = gravity_surfacing
+		#gravity_scale = gravity_surfacing
+		constant_force = Vector2(0,-20000)
 	
 	
 	# Self-oriantate the sub
@@ -60,7 +66,7 @@ func _process(delta: float) -> void:
 	
 func _startEndTimer():
 	# Start a timer, once it finishes, then we want to surface the sub. 
-	await get_tree().create_timer(60).timeout
+	await get_tree().create_timer(5).timeout
 	# Timer has finished now!!!
 	print("Lift the sub now")
 	# Reverse gravity!
@@ -68,7 +74,8 @@ func _startEndTimer():
 	
 func _surfaceSub():
 	surfacingIntiated = true
-	gravity_scale = gravity_surfacing
+	constant_force = Vector2(0,-20000)
+	#gravity_scale = gravity_surfacing
 
 
 func _spawn_a_fish():
