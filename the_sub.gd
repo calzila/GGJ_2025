@@ -47,8 +47,14 @@ func _process(delta: float) -> void:
 	
 	
 	velocity = linear_velocity.length()
+	
+	
 	# Tick away our oxygen a little every frame
-	oxygen -= 0.005 * delta
+	if (global_position.y < 50):
+		# don't deplete the oxygen if we're at the surface. 
+		pass
+	else:
+		oxygen -= 0.005 * delta
 	
 	
 	if global_position.y < 0 and surfacingIntiated:
