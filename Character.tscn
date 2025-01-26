@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://drfnwotp86vlp"]
+[gd_scene load_steps=7 format=3 uid="uid://drfnwotp86vlp"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_4636m"]
-[ext_resource type="Texture2D" uid="uid://b1m8c84fjpng8" path="res://Godot_Trans.png" id="2_un2gu"]
 [ext_resource type="Texture2D" uid="uid://bt5vwvbqq5c25" path="res://Godot_Body.png" id="3_dua17"]
 [ext_resource type="Texture2D" uid="uid://5wn2wow38gd0" path="res://Godot_Hand.png" id="4_gkys5"]
+[ext_resource type="Texture2D" uid="uid://cgbfuwtgqhvoi" path="res://Godot_NoEyes.png" id="4_r0esm"]
+[ext_resource type="Texture2D" uid="uid://dgiphbflkpkdi" path="res://Godot_Eye_Dot.png" id="5_22yvc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52wfu"]
 size = Vector2(85, 114)
@@ -41,4 +42,16 @@ position = Vector2(0, -82)
 scale = Vector2(0.906251, 0.913681)
 
 [node name="Head" type="Sprite2D" parent="HeadAttachment"]
-texture = ExtResource("2_un2gu")
+texture = ExtResource("4_r0esm")
+
+[node name="GodotEye_L" type="Sprite2D" parent="HeadAttachment/Head"]
+texture_filter = 1
+position = Vector2(-22.0689, 3.28342)
+scale = Vector2(1.10345, 1.09447)
+texture = ExtResource("5_22yvc")
+
+[node name="GodotEye_L2" type="Sprite2D" parent="HeadAttachment/Head"]
+texture_filter = 1
+position = Vector2(19.862, 3.28342)
+scale = Vector2(1.10345, 1.09447)
+texture = ExtResource("5_22yvc")
