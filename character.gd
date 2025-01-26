@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	$HeadAttachment/Head.global_position = $HeadAttachment.global_position + (headLookDirection * 50)
 	
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and (get_contact_count() > 0):
+	if Input.is_action_just_pressed("ui_accept") and (get_contact_count() > 0) and alive:
 		print("Plz jump")
 		if holdingLever:
 			pass
@@ -60,12 +60,16 @@ func _physics_process(delta: float) -> void:
 	if holdingLever:
 		# do some other shit if we're holding?
 		pass
+	elif alive == false:
+		#don't let the player move if they're dead. 
+		pass
 	else:
 		apply_central_force(direction * 100000 * delta)
 		
-	# Self-oriantate the sub
-	var correctionTorque = -rotation * 10000000 * delta
-	apply_torque(correctionTorque)
+	# Self-oriantate the player - only if they're alive. 
+	if alive:
+		var correctionTorque = -rotation * 10000000 * delta
+		apply_torque(correctionTorque)
 	
 	# orient head to always face up
 	$HeadAttachment/Head.global_rotation = $HeadAttachment/Head.global_rotation + (0 - $HeadAttachment/Head.global_rotation) * (delta * 7)
@@ -77,6 +81,8 @@ func _kill():
 	if alive:
 		# kill the player
 		alive = false
+		apply_torque(1000000)
+		apply_central_force(Vector2(1,0) * 1000)
 		print("kill player")
 		
 		pass
