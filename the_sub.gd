@@ -66,7 +66,7 @@ func _process(delta: float) -> void:
 	
 func _startEndTimer():
 	# Start a timer, once it finishes, then we want to surface the sub. 
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(100).timeout
 	# Timer has finished now!!!
 	print("Lift the sub now")
 	# Reverse gravity!
