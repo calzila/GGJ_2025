@@ -16,6 +16,18 @@ func _ready():
 	
 	# Load the tscn, ready to chek if it's a fish
 	fishCheck = load("res://fish.gd")
+	
+	# when we spawn, force the sub backwards
+	
+	
+	var myPosition : Vector2 = Vector2(global_position.x, global_position.y)
+	var targetPosition : Vector2 = Vector2(theSub.global_position.x, theSub.global_position.y)
+	var directionToTarget = -(myPosition - targetPosition)
+	directionToTarget = directionToTarget.normalized()
+	
+	theSub.apply_central_force(directionToTarget * 90000)
+
+	
 
 func _physics_process(delta: float) -> void:
 	velocity = Vector2(0, SPEED).rotated(dir)
