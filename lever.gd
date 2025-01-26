@@ -41,8 +41,6 @@ func _process(delta: float) -> void:
 			main.add_child.call_deferred(instance)
 			
 			instance.theSub = theSub
-			
-			print("FIRE")
 		
 		if thrustsShip:
 			parentGrabber.theSub.apply_central_force(Vector2(inputValue,0) * 90000 * delta)

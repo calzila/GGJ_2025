@@ -32,6 +32,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	print(weightFromFish)
+	
 	# Player hit the escape area!
 	if $Area2D_Button.overlaps_body(player):
 		print("Player Overlapped Escape!")
