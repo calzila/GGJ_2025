@@ -135,9 +135,15 @@ thrustsShip = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, -223)
-rotation = 4.86249
+rotation = 0.315905
 scale = Vector2(5.53125, 5.875)
 texture = ExtResource("8_w06ea")
 offset = Vector2(0, 312)
+
+[node name="Sprite2D" type="Sprite2D" parent="PointLight2D"]
+z_index = -2
+scale = Vector2(0.04, 0.48)
+texture = ExtResource("7_oj24b")
+offset = Vector2(0, 64)
 
 [connection signal="timeout" from="TimerFishSpawn" to="." method="_on_timer_fish_spawn_timeout"]
