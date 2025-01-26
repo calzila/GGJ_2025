@@ -15,3 +15,5 @@ data_*/
 mono_crash.*.json
 GGJ_2025.exe
 GGJ_2025.console.exe
+
+Exports/
