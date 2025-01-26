@@ -53,8 +53,13 @@ func _process(delta: float) -> void:
 	if (global_position.y < 50):
 		# don't deplete the oxygen if we're at the surface. 
 		pass
+	elif oxygen < 0:
+		print("OUT OF OXYGEN")
 	else:
 		oxygen -= 0.005 * delta
+	
+	# check if 
+	
 	
 	
 	if global_position.y < 0 and surfacingIntiated:
