@@ -8,6 +8,8 @@ var spawnRot : float
 
 var fishCheck
 
+var theSub
+
 func _ready():
 	global_position = spawnPos
 	global_rotation = spawnRot

@@ -11,6 +11,7 @@ var inputValue = 0.0
 
 var player
 var parentGrabber
+var theSub
 
 var main
 var projectile
@@ -19,6 +20,8 @@ var projectile
 func _ready() -> void:
 	main = get_tree().get_root().get_node("WorldRoot")
 	projectile = load("res://projectile.tscn")
+	
+	theSub = parentGrabber.theSub
 	pass # Replace with function body.
 
 
@@ -36,6 +39,8 @@ func _process(delta: float) -> void:
 			instance.spawnPos = projectileSpawnRef.global_position
 			instance.spawnRot = lightRef.rotation
 			main.add_child.call_deferred(instance)
+			
+			instance.theSub = theSub
 			
 			print("FIRE")
 		
