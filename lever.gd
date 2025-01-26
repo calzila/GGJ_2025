@@ -4,6 +4,7 @@ extends Node2D
 @export var movesLight: bool = false
 
 @export var lightRef: Node2D
+@export var projectileSpawnRef: Node2D
 
 var playerIsHolding = false
 var inputValue = 0.0
@@ -11,8 +12,13 @@ var inputValue = 0.0
 var player
 var parentGrabber
 
+var main
+var projectile
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	main = get_tree().get_root().get_node("WorldRoot")
+	projectile = load("res://projectile.tscn")
 	pass # Replace with function body.
 
 
@@ -25,8 +31,13 @@ func _process(delta: float) -> void:
 		
 		# handle Space input
 		if Input.is_action_just_pressed("ui_accept"):
+			var instance = projectile.instantiate()
+			instance.dir = lightRef.rotation
+			instance.spawnPos = projectileSpawnRef.global_position
+			instance.spawnRot = lightRef.rotation
+			main.add_child.call_deferred(instance)
 			
-			pass
+			print("FIRE")
 		
 		if thrustsShip:
 			parentGrabber.theSub.apply_central_force(Vector2(inputValue,0) * 90000 * delta)

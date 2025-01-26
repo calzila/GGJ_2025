@@ -107,11 +107,12 @@ scroll_active = false
 script = ExtResource("5_ayy7u")
 theSub = NodePath("..")
 
-[node name="Lever_Light" parent="." node_paths=PackedStringArray("lightRef") instance=ExtResource("6_3th0t")]
+[node name="Lever_Light" parent="." node_paths=PackedStringArray("lightRef", "projectileSpawnRef") instance=ExtResource("6_3th0t")]
 position = Vector2(-125, -213)
 rotation = 0.00245824
 movesLight = true
 lightRef = NodePath("../PointLight2D")
+projectileSpawnRef = NodePath("../PointLight2D/Sprite2D/ProjectileSpaw")
 
 [node name="TimerFishSpawn" type="Timer" parent="."]
 
@@ -145,5 +146,8 @@ z_index = -2
 scale = Vector2(0.04, 0.48)
 texture = ExtResource("7_oj24b")
 offset = Vector2(0, 64)
+
+[node name="ProjectileSpaw" type="Node2D" parent="PointLight2D/Sprite2D"]
+position = Vector2(0, 150)
 
 [connection signal="timeout" from="TimerFishSpawn" to="." method="_on_timer_fish_spawn_timeout"]

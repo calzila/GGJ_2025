@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://di5iu1uh2q8hw"]
+
+[ext_resource type="Script" path="res://projectile.gd" id="1_cqoe1"]
+[ext_resource type="Texture2D" uid="uid://b1m8c84fjpng8" path="res://Godot_Trans.png" id="1_thdui"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qd8qi"]
+radius = 48.0416
+
+[node name="Projectile" type="CharacterBody2D"]
+script = ExtResource("1_cqoe1")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("1_thdui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qd8qi")
