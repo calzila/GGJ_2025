@@ -86,4 +86,3 @@ func _spawn_a_fish():
 func _on_timer_fish_spawn_timeout() -> void:
 		print("Timer Finished?")
 		_spawn_a_fish()
-		
