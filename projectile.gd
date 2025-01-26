@@ -25,6 +25,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 	if body is RigidBody2D:
 		print("This is a fish I think")
-
+		body.queue_free()
 		pass
 	
